@@ -23,4 +23,16 @@ html {
         clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
       }
   }
-  
+
+  @keyframes msgpop {
+  0%   { opacity: 0; transform: translateY(6px) scale(.95); }
+  20%  { opacity: 1; transform: translateY(0) scale(1); }
+  80%  { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-4px) scale(.97); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+

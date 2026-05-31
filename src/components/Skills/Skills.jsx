@@ -2,79 +2,105 @@ import React from "react";
 import { SkillsInfo } from "../../constants";
 import Tilt from "react-parallax-tilt";
 
-const Skills = () => (
-  <section
-    id="skills"
-    className="py-24 pb-24 px-4 sm:px-8 md:px-12 lg:px-20 font-sans bg-skills-gradient clip-path-custom"
-  >
-    {/* Section Title */}
-    <div className="text-center mb-8">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white">SKILLS</h2>
-      <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
-      <p className="text-gray-400 mt-4 text-lg font-semibold">
-      A collection of my technical skills through various projects and experiences
-      </p>
-    </div>
+const Skills = () => {
+  return (
+    <section
+      id="skills"
+      className="py-24 px-4 sm:px-8 md:px-12 lg:px-20 font-sans bg-skills-gradient clip-path-custom"
+    >
+      {/* Section Title */}
+      <div className="text-center mb-14">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          SKILLS
+        </h2>
 
-    {/* Skill Categories */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-10">
-      {SkillsInfo.map((category) => (
-        <div
-          key={category.title}
-          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-2 rounded-2xl border border-white 
-shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
-        >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
-            {category.title}
-          </h3>
+        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-3 rounded-full"></div>
 
-          {/* Skill Items - 3 per row on larger screens */}
-          <Tilt
+        <p className="text-gray-400 mt-5 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          A collection of my technical skills through various projects and
+          experiences
+        </p>
+      </div>
+
+      {/* Skill Categories */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {SkillsInfo.map((category) => (
+          <div
             key={category.title}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
+            className="bg-[#111827]/80 backdrop-blur-md border border-white/10 rounded-3xl p-5 sm:p-7 shadow-[0_0_20px_rgba(130,69,236,0.25)] overflow-visible"
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-              {category.skills.map((skill) => (
-                <div
-  key={skill.name}
-  
-  className="group relative flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 text-center cursor-pointer"
->
-  <img
-    src={skill.logo}
-    alt={`${skill.name} logo`}
-    className="w-6 h-6 sm:w-8 sm:h-8"
-  />
+            {/* Category Title */}
+            <h3 className="text-xl sm:text-2xl font-semibold text-center text-gray-300 mb-8">
+              {category.title}
+            </h3>
 
-  <span className="text-xs sm:text-sm text-gray-300">
-    {skill.name}
-  </span>
+            <Tilt
+              tiltMaxAngleX={10}
+              tiltMaxAngleY={10}
+              perspective={1000}
+              scale={1.02}
+              transitionSpeed={1000}
+              gyroscope={true}
+            >
+              {/* Skills Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="group relative flex items-center justify-center gap-2 border border-gray-700 rounded-2xl px-3 py-3 bg-[#0f172a] hover:border-[#8245ec] transition-all duration-300 cursor-pointer"
+                  >
+                    {/* Logo */}
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="w-5 h-5 sm:w-7 sm:h-7 object-contain"
+                    />
 
-  {/* Info Box */}
-  <div className="absolute hidden group-hover:block top-14 left-1/2 -translate-x-1/2 w-56 bg-gray-900 border border-[#8245ec] rounded-lg p-3 z-50 shadow-lg">
-    
-    <h4 className="text-sm font-bold text-white">
-      {skill.fullForm}
-    </h4>
+                    {/* Skill Name */}
+                    <span className="text-xs sm:text-sm text-gray-300 font-medium text-center">
+                      {skill.name}
+                    </span>
 
-    <p className="text-xs text-gray-300 mt-1">
-      {skill.about}
-    </p>
-  </div>
-</div>
-              ))}
-            </div>
-          </Tilt>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+                    {/* Hover Info Box */}
+                    <div
+                      className="
+                        absolute 
+                        opacity-0 
+                        invisible 
+                        group-hover:opacity-100 
+                        group-hover:visible
+                        transition-all 
+                        duration-300
+                        bottom-[120%]
+                        left-1/2
+                        -translate-x-1/2
+                        w-64
+                        z-50
+                        pointer-events-none
+                      "
+                    >
+                      <div className="bg-[#111827] border border-[#8245ec] rounded-xl p-4 shadow-2xl">
+                        <h4 className="text-sm font-bold text-white mb-2">
+                          {skill.fullForm}
+                        </h4>
+
+                        <p className="text-xs text-gray-300 leading-relaxed">
+                          {skill.about}
+                        </p>
+                      </div>
+
+                      {/* Tooltip Arrow */}
+                      <div className="w-3 h-3 bg-[#111827] border-r border-b border-[#8245ec] rotate-45 absolute left-1/2 -translate-x-1/2 -bottom-1"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Tilt>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default Skills;
-

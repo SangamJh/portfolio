@@ -29,7 +29,8 @@ import KNPSLogo from './assets/education_logo/KNPS_logo.png';
 // Project Section Logo's
 import BatteryLim from './assets/work_logo/Battery_Limiter.png';
 import Smart_Autonomous_Navigation_Robot from './assets/work_logo/Smart_Autonomous_Navigation_Robot.jpg';
-import movierecLogo from './assets/work_logo/movie_rec.png';
+import rtcLogo from './assets/work_logo/RTCapp.webp';
+import doorLogo from './assets/work_logo/Smart_Door.jpg';
 
 // Certificate Section
 import Advance_IoT from './assets/certificates/Advance_Internet_of_Things_Certificate.jpg';
@@ -240,6 +241,7 @@ export const SkillsInfo = [
   description:
     "A smart desktop application developed to help users maintain battery health and extend laptop lifespan by controlling charging limits. The software continuously monitors battery percentage and alerts users when the battery reaches a custom-defined threshold. It includes features like custom alert sounds, auto-start on boot, system tray support, and real-time battery monitoring, providing a seamless and efficient user experience.",
   image: BatteryLim,
+  category : "python",
   tags: ["Python", "Tkinter", "PyInstaller", "Pygame", "Psutil"],
   github: "https://github.com/SangamJh/battery-limiter-app",
   webapp: "https://github.com/SangamJh/battery-limiter-app/releases/download/v1.0.0/NomoreOvercharging.exe",
@@ -250,20 +252,34 @@ export const SkillsInfo = [
   description:
     "An intelligent autonomous robot designed to navigate environments efficiently without human control. The robot uses sensors and obstacle detection algorithms to analyze surroundings, avoid collisions, and determine optimal movement paths in real time. Built with a focus on automation and smart navigation, the project demonstrates practical applications of robotics, embedded systems, and autonomous decision-making.",
   image: Smart_Autonomous_Navigation_Robot,
+  category : "iot",
   tags: ["Arduino", "C++", "Sensors", "Robotics", "IoT"],
   github: "https://github.com/SangamJh/smart-autonomous-navigation-robot-project",
   webapp: "https://drive.google.com/file/d/1hTrXypvBgLqkne5rNxxjx6vgSKnLn5Bf/view?usp=sharing",
 },
+  {
+  id: 2,
+  title: "Smart Door",
+  description:
+    "A smart security and access control system designed to enhance home and office safety through intelligent door management. The Smart Door project integrates modern authentication methods such as password entry, RFID, or mobile-based access to allow secure and convenient entry. It features real-time monitoring, automated locking mechanisms, and responsive controls to improve user security and accessibility. Built with a focus on reliability and user experience, the project demonstrates practical implementation of IoT concepts, hardware-software integration, and responsive system design",
+    image: doorLogo,
+    category : "iot",
+  tags: ["Arduino", "C++", "Sensors", "Robotics", "IoT"],
+  github: "https://github.com/SangamJh/FAQ-Chatbot",
+  webapp: "YOUR_WEBAPP_LINK",
+},
     {
   id: 3,
-  title: "FAQ Chatbot",
+  title: "Real Time Chat App",
   description:
     "A responsive and interactive chatbot application developed to provide instant answers to frequently asked questions. The chatbot processes user queries and delivers accurate responses through a clean conversational interface, improving user engagement and reducing manual support efforts. Designed with simplicity and efficiency in mind, the project demonstrates practical implementation of frontend development, API integration, and intelligent response handling.",
-  image: movierecLogo,
+  image: rtcLogo,
+  category : "mern",
   tags: ["React JS", "JavaScript", "API", "HTML", "CSS"],
   github: "https://github.com/SangamJh/FAQ-Chatbot",
   webapp: "YOUR_WEBAPP_LINK",
 }
+    
   ];
   
   export const certificates = [
@@ -289,6 +305,16 @@ export const SkillsInfo = [
   },
   {
     id: 3,
+    title: "Advance Internet of Things",
+    issuer: "Tecnoledge",
+    issuerLogo: "https://media.licdn.com/dms/image/v2/C510BAQHHJJ5X66Tidg/company-logo_200_200/company-logo_200_200/0/1630613579462?e=2147483647&v=beta&t=ODU3QGdLE_rKIaVyfX4jcDzq3TE1t4iRZhFtiE8-phg",
+    date: "January 2025",
+    image: Smart_Embedded_Systems,
+    link: "https://drive.google.com/file/d/1vQJix5Ws1YJpyBoC2DS16MslV96IZOeT/view?usp=sharing",
+    tags: ["Arduino", "C++", "Sensors", "Robotics", "IoT"],
+  },
+  {
+    id: 4,
     title: "Artificial Intelligence Certificate OutSkill",
     issuer: "Outskill",
     issuerLogo: "https://media.licdn.com/dms/image/v2/D560BAQHf3e0DfaWKIA/company-logo_200_200/company-logo_200_200/0/1737454411071/outskillcom_logo?e=2147483647&v=beta&t=xQdyY4FrCwS_CHz_qb_mNNnMw6ttiQAOA4kDKdKx858",
